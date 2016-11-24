@@ -34,4 +34,5 @@
     <string name="descriere_adaugaEv">Descriere:</string>
     <string name="add_adaugaEv">Add</string>
     <string name="data_adaugaEv_tv">Data:</string>
+    <string name="data_evenimente">Data:</string>
 </resources>

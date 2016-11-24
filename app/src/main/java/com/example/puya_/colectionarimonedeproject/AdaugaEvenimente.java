@@ -40,8 +40,9 @@ public class AdaugaEvenimente extends AppCompatActivity {
 
                 EvenimenteJavaClass ev = new EvenimenteJavaClass(_nume,_locatie,_descriere,_data);
                 Evenimente.lista.add(ev);
-                Intent it = new Intent(getApplicationContext(),Evenimente.class);
-                startActivity(it);
+//                Intent it = new Intent(getApplicationContext(),Evenimente.class);
+//                startActivity(it);
+                finish();
 
 
             }
