@@ -29,4 +29,9 @@
     <string name="nume_evenimente">Nume:</string>
     <string name="locatie_evenimente">Locatie:</string>
     <string name="descriere_evenimente">Descriere:</string>
+    <string name="nume_adaugaEv">Nume:</string>
+    <string name="locatie_adaugaEv">Locatie:</string>
+    <string name="descriere_adaugaEv">Descriere:</string>
+    <string name="add_adaugaEv">Add</string>
+    <string name="data_adaugaEv_tv">Data:</string>
 </resources>

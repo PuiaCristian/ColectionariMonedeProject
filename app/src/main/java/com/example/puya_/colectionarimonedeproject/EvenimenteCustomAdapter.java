@@ -35,10 +35,11 @@ public class EvenimenteCustomAdapter extends ArrayAdapter {
         TextView locatie = (TextView) customView.findViewById(R.id.locatie_evenimente_textView);
         TextView descriere = (TextView) customView.findViewById(R.id.descriere_evenimente_textView);
 
-        EvenimenteJavaClass e = evenimente.get(position);
+       // EvenimenteJavaClass e = evenimente.get(position);
 
-        //nume.setText(e.getNume());
-        //// TODO: 11/24/2016 adaptor_ev 
+        nume.setText(AdaugaEvenimente._nume);
+        locatie.setText(AdaugaEvenimente._locatie);
+        descriere.setText(AdaugaEvenimente._descriere);
 
         
         return customView;
