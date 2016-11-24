@@ -10,4 +10,15 @@
     <string name="licitatii_meniuPrincipal_button">Licitatii</string>
     <string name="about_meniuPrincipal_button">About</string>
     <string name="utilizatori_meniuPrincipal_button">Utilizatori</string>
+    <string name="User_signUp">User</string>
+    <string name="Nume_signUp">Nume:</string>
+    <string name="prenume_signUp">Prenume:</string>
+    <string name="dataNasterii_signUp">Data Nasterii:</string>
+    <string name="sex_signUp">Sex:</string>
+    <string name="M_signUp">M</string>
+    <string name="F">F</string>
+    <string name="email_signUP">E-Mail:</string>
+    <string name="password_signUp">Password:</string>
+    <string name="retypepassword_signUp_textView">Retype Password:</string>
+    <string name="add_signUp">Add</string>
 </resources>

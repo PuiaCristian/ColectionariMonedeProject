@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Profil" />
-        <activity android:name=".About"></activity>
+        <activity android:name=".About" />
+        <activity android:name=".SignUp"></activity>
     </application>
 
 </manifest>
