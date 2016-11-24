@@ -21,4 +21,8 @@
     <string name="password_signUp">Password:</string>
     <string name="retypepassword_signUp_textView">Retype Password:</string>
     <string name="add_signUp">Add</string>
+    <string name="User">User</string>
+    <string name="Password">Parola</string>
+    <string name="LogIn">Login</string>
+    <string name="SignUp">Singup</string>
 </resources>
