@@ -6,12 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MeniuPrincipal extends AppCompatActivity {
 
+    public static ArrayList<LicitatiiJavaClass> listaLicitatii;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meniu_principal);
+
+
 
 
         Button evenimente = (Button)findViewById(R.id.evenimente_meniuPinrcipal_button);
@@ -58,6 +63,15 @@ public class MeniuPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(getApplicationContext(),About.class);
+                startActivity(it);
+            }
+        });
+
+        Button adaugaLicitatie = (Button)findViewById(R.id.adaugaLicitatie_meniuPinrcipal_button);
+        adaugaLicitatie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(getApplicationContext(),AdaugaLicitatie.class);
                 startActivity(it);
             }
         });

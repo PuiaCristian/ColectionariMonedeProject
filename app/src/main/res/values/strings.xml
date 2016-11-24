@@ -35,4 +35,9 @@
     <string name="add_adaugaEv">Add</string>
     <string name="data_adaugaEv_tv">Data:</string>
     <string name="data_evenimente">Data:</string>
+    <string name="AdaugaLicitatie_Licitatii_Button">Adauga Licitatie</string>
+    <string name="nume_adaugaLicitatie_tv">Nume:</string>
+    <string name="descriere_adaugaLicitatie_tv">Descriere:</string>
+    <string name="pret_adaugaLicitatie_tv">Pret Pornire:</string>
+    <string name="adaugaLicitatie_meniuPrincipal_button">Adauga Licitatie</string>
 </resources>

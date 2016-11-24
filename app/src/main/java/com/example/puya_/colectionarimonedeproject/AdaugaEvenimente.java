@@ -42,7 +42,7 @@ public class AdaugaEvenimente extends AppCompatActivity {
                 Evenimente.lista.add(ev);
 //                Intent it = new Intent(getApplicationContext(),Evenimente.class);
 //                startActivity(it);
-                finish();
+               finish();
 
 
             }

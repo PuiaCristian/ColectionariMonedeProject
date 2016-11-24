@@ -15,13 +15,14 @@ public class Evenimente extends AppCompatActivity {
     public static List<EvenimenteJavaClass> lista = new ArrayList<EvenimenteJavaClass>();
     public static ListView lv;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evenimente);
 
 
-
+    //// TODO: 24/11/2016  eroare listView 
 
         Button adaugaEvenimente = (Button)findViewById(R.id.adaugaEvenimente_evenimente_button);
         adaugaEvenimente.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +32,9 @@ public class Evenimente extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
+
+
 
         EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this,R.layout.layout_evenimente,lista);
         lv = (ListView) findViewById(R.id.listView_Evenimente);

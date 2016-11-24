@@ -15,13 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdaugaEvenimente"/>
+        <activity android:name=".AdaugaEvenimente" />
         <activity android:name=".Profil" />
         <activity android:name=".About" />
         <activity android:name=".Login" />
         <activity android:name=".Evenimente" />
         <activity android:name=".Licitatii" />
-        <activity android:name=".Utilizatori"></activity>
+        <activity android:name=".Utilizatori" />
+        <activity android:name=".AdaugaLicitatie"></activity>
     </application>
 
 </manifest>
