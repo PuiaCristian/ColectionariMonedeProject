@@ -7,13 +7,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AdaugaEvenimente extends AppCompatActivity {
 
-    public static String _nume;
-    public static String _locatie;
-    public static String _descriere;
-    public static String _data;
-
+    public  String _nume;
+    public  String _locatie;
+    public  String _descriere;
+    public  String _data;
+    public static List<EvenimenteJavaClass> listaEvenimente=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,6 @@ public class AdaugaEvenimente extends AppCompatActivity {
                 TextView locatie = (TextView) findViewById(R.id.locatie_adaugaEv_et);
                 TextView descriere = (TextView) findViewById(R.id.descriere_adaugaEv_et);
                 TextView data = (TextView) findViewById(R.id.data_adaugaEv_ev);
-
 
                  _nume=nume.getText().toString();
                  _locatie=locatie.getText().toString();

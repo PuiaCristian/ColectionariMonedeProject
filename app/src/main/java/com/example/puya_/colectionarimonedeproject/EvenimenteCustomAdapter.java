@@ -19,7 +19,7 @@ public class EvenimenteCustomAdapter extends ArrayAdapter {
     List<EvenimenteJavaClass> evenimente;
 
     public EvenimenteCustomAdapter(Context context, int resource, List<EvenimenteJavaClass> ev) {
-        super(context, resource);
+        super(context, resource,ev);
         evenimente=ev;
     }
 
@@ -38,11 +38,13 @@ public class EvenimenteCustomAdapter extends ArrayAdapter {
 
         EvenimenteJavaClass e = evenimente.get(position);
 
-        nume.setText(AdaugaEvenimente._nume);
-        locatie.setText(AdaugaEvenimente._locatie);
-        descriere.setText(AdaugaEvenimente._descriere);
-        data.setText(AdaugaEvenimente._data);
+        for(EvenimenteJavaClass ed : Evenimente.lista) {
 
+            nume.setText(ed.getNume().toString());
+            locatie.setText(ed.getNume().toString());
+            descriere.setText(ed.getNume().toString());
+            data.setText(ed.getNume().toString());
+        }
 
         
         return customView;
