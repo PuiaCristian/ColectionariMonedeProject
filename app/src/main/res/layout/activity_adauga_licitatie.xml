@@ -57,5 +57,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/pret_adaugaLicitatie_et"
             android:hint="Pret Pornire"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adaugaLicitatie_AdaugaLicitatie_button"
+            android:id="@+id/adaugaLicitatie_AdaugaLicitatie_button"/>
     </LinearLayout>
 </LinearLayout>

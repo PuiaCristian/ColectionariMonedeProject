@@ -40,4 +40,5 @@
     <string name="descriere_adaugaLicitatie_tv">Descriere:</string>
     <string name="pret_adaugaLicitatie_tv">Pret Pornire:</string>
     <string name="adaugaLicitatie_meniuPrincipal_button">Adauga Licitatie</string>
+    <string name="adaugaLicitatie_AdaugaLicitatie_button">Adauga Licitatie</string>
 </resources>

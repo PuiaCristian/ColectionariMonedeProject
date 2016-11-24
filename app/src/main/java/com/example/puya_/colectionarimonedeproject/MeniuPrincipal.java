@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class MeniuPrincipal extends AppCompatActivity {
 
-    public static ArrayList<LicitatiiJavaClass> listaLicitatii;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,13 +67,6 @@ public class MeniuPrincipal extends AppCompatActivity {
             }
         });
 
-        Button adaugaLicitatie = (Button)findViewById(R.id.adaugaLicitatie_meniuPinrcipal_button);
-        adaugaLicitatie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(getApplicationContext(),AdaugaLicitatie.class);
-                startActivity(it);
-            }
-        });
+
     }
 }
