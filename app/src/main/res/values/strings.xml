@@ -8,5 +8,6 @@
     <string name="descriere_about_tv">Descriere</string>
     <string name="profil_meniuPrincipal_button">Profil</string>
     <string name="licitatii_meniuPrincipal_button">Licitatii</string>
+    <string name="about_meniuPrincipal_button">About</string>
     <string name="utilizatori_meniuPrincipal_button">Utilizatori</string>
 </resources>
