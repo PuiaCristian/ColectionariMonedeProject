@@ -10,4 +10,8 @@
     <string name="licitatii_meniuPrincipal_button">Licitatii</string>
     <string name="about_meniuPrincipal_button">About</string>
     <string name="utilizatori_meniuPrincipal_button">Utilizatori</string>
+    <string name="User">User</string>
+    <string name="Password">Parola</string>
+    <string name="LogIn">Login</string>
+    <string name="SignUp">Singup</string>
 </resources>
