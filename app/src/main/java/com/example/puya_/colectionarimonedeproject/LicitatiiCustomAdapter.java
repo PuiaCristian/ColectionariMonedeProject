@@ -31,15 +31,15 @@ public class LicitatiiCustomAdapter extends ArrayAdapter<LicitatiiJavaClass> {
 
         View customView = li.inflate(R.layout.layout_licitatie,null);
 
-        TextView t1 = (TextView) customView.findViewById(R.id.nume_adaugaLicitatie_et);
-        TextView t2 = (TextView) customView.findViewById(R.id.descriere_adaugaLicitatie_et);
-        TextView t3 = (TextView) customView.findViewById(R.id.pret_adaugaLicitatie_et);
+        TextView t1 = (TextView) customView.findViewById(R.id.nume_licitatie_tv);
+        TextView t2 = (TextView) customView.findViewById(R.id.descriere_licitatie_tv);
+        TextView t3 = (TextView) customView.findViewById(R.id.pret_licitatie_tv);
 
         LicitatiiJavaClass lic = date.get(position);
 
-//        t1.setText(lic.getNume());
-//        t1.setText(lic.getDescriere());
-//        t1.setText(lic.getPretPornire());
+        t1.setText(lic.getNume());
+        t2.setText(lic.getDescriere());
+        t3.setText(lic.getPretPornire());
 
         return customView;
     }
