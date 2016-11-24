@@ -20,9 +20,8 @@ public class Evenimente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evenimente);
 
-        EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this,R.layout.layout_evenimente,lista);
-        lv = (ListView) findViewById(R.id.listView_Evenimente);
-        lv.setAdapter(e);
+
+
 
         Button adaugaEvenimente = (Button)findViewById(R.id.adaugaEvenimente_evenimente_button);
         adaugaEvenimente.setOnClickListener(new View.OnClickListener() {
@@ -33,7 +32,9 @@ public class Evenimente extends AppCompatActivity {
             }
         });
 
-
+        EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this,R.layout.layout_evenimente,lista);
+        lv = (ListView) findViewById(R.id.listView_Evenimente);
+        lv.setAdapter(e);
 
     }
 }
