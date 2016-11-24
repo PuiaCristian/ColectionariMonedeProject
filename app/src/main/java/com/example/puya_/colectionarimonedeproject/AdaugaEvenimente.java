@@ -12,11 +12,14 @@ import java.util.List;
 
 public class AdaugaEvenimente extends AppCompatActivity {
 
-    public  String _nume;
-    public  String _locatie;
-    public  String _descriere;
-    public  String _data;
-    public static List<EvenimenteJavaClass> listaEvenimente=new ArrayList<>();
+    public   String _nume;
+    public   String _locatie;
+    public   String _descriere;
+    public    String _data;
+
+    public static List<EvenimenteJavaClass> listaEvenimente=new ArrayList<EvenimenteJavaClass>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +42,17 @@ public class AdaugaEvenimente extends AppCompatActivity {
                  _descriere=descriere.getText().toString();
                 _data = data.getText().toString();
 
-
+               // AdaugaEvenimente a = new AdaugaEvenimente();
                 EvenimenteJavaClass ev = new EvenimenteJavaClass(_nume,_locatie,_descriere,_data);
                 Evenimente.lista.add(ev);
+                listaEvenimente.add(ev);
 //                Intent it = new Intent(getApplicationContext(),Evenimente.class);
-//                startActivity(it);
+//                it.putExtra("nume",_nume);
+//                it.putExtra("locatie",_locatie);
+//                it.putExtra("descriere",_descriere);
+//                it.putExtra("data",_data);
+
+           //     startActivity(it);
                finish();
 
 

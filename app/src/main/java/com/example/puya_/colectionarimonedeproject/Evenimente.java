@@ -35,7 +35,6 @@ public class Evenimente extends AppCompatActivity {
 
 
 
-
         EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this,R.layout.layout_evenimente,lista);
         lv = (ListView) findViewById(R.id.listView_Evenimente);
         lv.setAdapter(e);
