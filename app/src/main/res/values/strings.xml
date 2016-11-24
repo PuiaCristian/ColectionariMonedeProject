@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ColectionariMonedeProject</string>
+    <string name="evenimente_meniuPrincipal_button">Evenimente</string>
+    <string name="licitatii_meniuPrincipal_button">Licitatii</string>
+    <string name="profil_meniuPrincipal_button">Profil</string>
+    <string name="utilizatori_meniuPrincipal_button">Utilizatori</string>
+    <string name="about_meniuPrincipal_button">About</string>
 </resources>
