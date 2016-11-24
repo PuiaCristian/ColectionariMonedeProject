@@ -1,17 +1,13 @@
 package com.example.puya_.colectionarimonedeproject;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-public class Evenimente extends AppCompatActivity {
+public class Utilizatori extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_evenimente);
-
+        setContentView(R.layout.activity_utilizatori);
     }
 }
