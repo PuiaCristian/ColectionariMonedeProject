@@ -26,4 +26,7 @@
     <string name="LogIn">Login</string>
     <string name="SignUp">Singup</string>
     <string name="adaugaEv_evenimente">Adauga Evenimente</string>
+    <string name="nume_evenimente">Nume:</string>
+    <string name="locatie_evenimente">Locatie:</string>
+    <string name="descriere_evenimente">Descriere:</string>
 </resources>

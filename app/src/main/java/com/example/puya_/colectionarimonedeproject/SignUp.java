@@ -87,7 +87,7 @@ public class SignUp extends AppCompatActivity {
 //                    u.setParola(_password);
 
                     database.AdaugaElemente(u);
-                    Intent i = new Intent(getApplicationContext(),LogIn.class);
+                    Intent i = new Intent(getApplicationContext(),Login.class);
                     startActivity(i);
 
                 }
