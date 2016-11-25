@@ -21,7 +21,8 @@
         <activity android:name=".Login" />
         <activity android:name=".Evenimente" />
         <activity android:name=".Licitatii" />
-        <activity android:name=".Utilizatori" />
+        <activity android:name=".Utilizatori"
+            android:screenOrientation="landscape"> </activity>
         <activity android:name=".AdaugaLicitatie"></activity>
     </application>
 
