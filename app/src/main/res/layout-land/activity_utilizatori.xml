@@ -18,7 +18,7 @@
         class="com.example.puya_.colectionarimonedeproject.DetaliiUtilizatoriFragment"/>
 
     <fragment
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="match_parent"
         android:id="@+id/fragment_lista_utilizatori"
         android:layout_alignParentLeft="true"

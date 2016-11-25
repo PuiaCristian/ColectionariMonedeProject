@@ -8,27 +8,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="com.example.puya_.colectionarimonedeproject.Licitatii">
+    tools:context="com.example.puya_.colectionarimonedeproject.Licitatii"
+    android:orientation="vertical">
 
 
+    <Button
+        android:id="@+id/adaugaLicitatie_licitatii_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AdaugaLicitatie_Licitatii_Button" />
 
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/AdaugaLicitatie_Licitatii_Button"
-                android:id="@+id/adaugaLicitatie_licitatii_button"/>
-
-            <ListView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/licitatii_Licitatii_listView">
-            </ListView>
-
-
-
-
+    <ListView
+        android:id="@+id/licitatii_Licitatii_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ListView>
 
 
 </LinearLayout>
