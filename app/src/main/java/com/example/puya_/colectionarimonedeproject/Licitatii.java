@@ -13,7 +13,7 @@ import java.util.List;
 public class Licitatii extends AppCompatActivity {
 
     public  static ListView listViewLicitatii;
-    public static List<LicitatiiJavaClass> listaLicitatii= new ArrayList<>();
+    public static List<LicitatiiJavaClass> listaLicitatii= new ArrayList<LicitatiiJavaClass>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

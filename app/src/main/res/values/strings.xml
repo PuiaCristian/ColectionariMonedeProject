@@ -41,4 +41,9 @@
     <string name="pret_adaugaLicitatie_tv">Pret Pornire:</string>
     <string name="adaugaLicitatie_meniuPrincipal_button">Adauga Licitatie</string>
     <string name="adaugaLicitatie_AdaugaLicitatie_button">Adauga Licitatie</string>
+    <string name="nume_readxml">Nume:</string>
+    <string name="locatie_readxml">Locatie:</string>
+    <string name="descriere_readxml">Descriere:</string>
+    <string name="data_readxml">Data:</string>
+    <string name="welcome_splash">WELCOME</string>
 </resources>
