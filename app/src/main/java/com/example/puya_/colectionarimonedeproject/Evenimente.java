@@ -37,7 +37,7 @@ public class Evenimente extends AppCompatActivity {
 
 
 
-
+//// TODO: 11/28/2016 Nu intra in setOnItemClickListener... 
 
 
         EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this,R.layout.layout_evenimente,lista);
