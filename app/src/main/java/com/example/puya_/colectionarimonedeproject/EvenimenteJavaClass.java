@@ -10,16 +10,26 @@ public class EvenimenteJavaClass {
     private String locatie;
     private String descriere;
     private String data;
+    private String site;
 
     public EvenimenteJavaClass(){
 
     }
 
-    public EvenimenteJavaClass(String nume, String locatie, String descriere, String data) {
+    public EvenimenteJavaClass(String nume, String locatie, String descriere, String data,String site) {
         this.nume = nume;
         this.locatie = locatie;
         this.descriere = descriere;
         this.data = data;
+        this.site=site;
+    }
+
+    public String getSite() {
+        return site;
+    }
+
+    public void setSite(String site) {
+        this.site = site;
     }
 
     public String getData() {

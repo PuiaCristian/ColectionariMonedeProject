@@ -46,4 +46,6 @@
     <string name="descriere_readxml">Descriere:</string>
     <string name="data_readxml">Data:</string>
     <string name="welcome_splash">WELCOME</string>
+    <string name="site_adaugaEv">Site:</string>
+    <string name="site_evenimente">Site:</string>
 </resources>

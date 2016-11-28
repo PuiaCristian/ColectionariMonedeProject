@@ -41,6 +41,7 @@ public class AdaugaEvenimente extends AppCompatActivity {
     public  String _locatie;
     public  String _descriere;
     public  String _data;
+    public  String _site;
     //public static List<EvenimenteJavaClass> listaEvenimente=new ArrayList<>();
 
     @Override
@@ -58,14 +59,16 @@ public class AdaugaEvenimente extends AppCompatActivity {
                 TextView locatie = (TextView) findViewById(R.id.locatie_adaugaEv_et);
                 TextView descriere = (TextView) findViewById(R.id.descriere_adaugaEv_et);
                 TextView data = (TextView) findViewById(R.id.data_adaugaEv_ev);
+                TextView site = (TextView) findViewById(R.id.site_adaugaEv_et);
 
                  _nume=nume.getText().toString();
                  _locatie=locatie.getText().toString();
                  _descriere=descriere.getText().toString();
                 _data = data.getText().toString();
+                _site = site.getText().toString();
 
 
-                EvenimenteJavaClass ev = new EvenimenteJavaClass(_nume,_locatie,_descriere,_data);
+                EvenimenteJavaClass ev = new EvenimenteJavaClass(_nume,_locatie,_descriere,_data,_site);
                 Evenimente.lista.add(ev);
 
 
@@ -124,39 +127,10 @@ public class AdaugaEvenimente extends AppCompatActivity {
 //                } catch (FileNotFoundException e) {
 //                    e.printStackTrace();
 //                }
+//
+//
 
-                try {
-                    DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-                    InputSource x = new InputSource("citire_xml.xml");
-                    Document doc = builder.parse(x);
-
-                    if(doc != null)
-                    {
-                        NodeList evenimente = doc.getElementsByTagName("eveniment");
-
-                        for(int i=0;i<evenimente.getLength();i++){
-                            Node nod = evenimente.item(i);
-                            if(nod.getNodeType() == Node.ELEMENT_NODE){
-                                Element elem = (Element) nod;
-                                EvenimenteJavaClass ejc = new EvenimenteJavaClass();
-                                ejc.setNume(elem.getElementsByTagName("nume").item(0).getTextContent());
-                                ejc.setLocatie(elem.getElementsByTagName("locatie").item(0).getTextContent());
-                                ejc.setDescriere(elem.getElementsByTagName("descriere").item(0).getTextContent());
-                                ejc.setData(elem.getElementsByTagName("data").item(0).getTextContent());
-                                ReadXmlEvenimente.l.add(ejc);
-                            }
-                        }
-                    }
-                } catch (ParserConfigurationException e) {
-                    e.printStackTrace();
-                } catch (SAXException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                finish();
-                Intent i = new Intent(getApplicationContext(),ReadXmlEvenimente.class);
+                Intent i = new Intent(getApplicationContext(),Evenimente.class);
                 startActivity(i);
 
             }

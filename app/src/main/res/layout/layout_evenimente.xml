@@ -45,6 +45,12 @@
                     android:id="@+id/data_evenimente_tv"
                     android:text="@string/data_evenimente"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/site_evenimente_tv"
+                    android:text="@string/site_evenimente"/>
+
 
         </LinearLayout>
     </ScrollView>

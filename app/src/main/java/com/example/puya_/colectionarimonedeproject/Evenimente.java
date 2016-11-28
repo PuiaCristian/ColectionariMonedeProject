@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -22,7 +24,7 @@ public class Evenimente extends AppCompatActivity {
         setContentView(R.layout.activity_evenimente);
 
 
-    //// TODO: 24/11/2016  eroare listView 
+
 
         Button adaugaEvenimente = (Button)findViewById(R.id.adaugaEvenimente_evenimente_button);
         adaugaEvenimente.setOnClickListener(new View.OnClickListener() {
@@ -35,9 +37,23 @@ public class Evenimente extends AppCompatActivity {
 
 
 
+
+
+
         EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this,R.layout.layout_evenimente,lista);
         lv = (ListView) findViewById(R.id.listView_Evenimente);
         lv.setAdapter(e);
+
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getApplicationContext(),WebEvenimente.class);
+                i.putExtra("site",lista.get(position).getSite());
+                startActivity(i);
+            }
+        });
+
 
     }
 }
