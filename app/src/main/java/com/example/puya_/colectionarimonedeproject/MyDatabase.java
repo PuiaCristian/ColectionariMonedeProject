@@ -6,9 +6,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import static android.R.attr.data;
 import static android.R.attr.id;
 
 /**
@@ -73,6 +75,7 @@ public class MyDatabase extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
 
         db.insert(TABLE_NAME,null,values);
+        Log.d("date","Datele au fost inserate");
         db.close();
     }
 
@@ -106,25 +109,12 @@ public class MyDatabase extends SQLiteOpenHelper{
 //    }
 
 
-    public String getUserData(String utilizator){
-        Cursor cursor = null;
-        String u ="";
-        SQLiteDatabase d  = this.getReadableDatabase();
-        try{
-
-            cursor = d.rawQuery("SELECT user FROM user WHERE id=?", new String[] {COLUMN_ID + ""});
-
-            if(cursor.getCount() > 0) {
-
-                cursor.moveToFirst();
-                u = cursor.getString(cursor.getColumnIndex("user"));
-            }
-
-            return u;
-        }finally {
-
-            cursor.close();
-        }
+    public Cursor getUserData(MyDatabase database){
+       // MyDatabase d = new MyDatabase(this);
+       SQLiteDatabase sqLiteDatabase = database.getReadableDatabase();
+        String[] coloane = {COLUMN_USER,COLUMN_PASSWORD};
+        Cursor c = sqLiteDatabase.query(TABLE_NAME,coloane,null,null,null,null,null);
+        return c;
     }
 
     public String getPasswordData(String pass){
