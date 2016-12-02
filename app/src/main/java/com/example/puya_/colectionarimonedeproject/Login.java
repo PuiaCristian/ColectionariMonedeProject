@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,10 +47,13 @@ public class Login extends AppCompatActivity {
 
 
                     do{
-                        if(_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))){
+                        if(_user.equals(c.getString(1)) && (_pass.equals(c.getString(2)))){
                             stare = true;
-                            String u = c.getString(0);
-                            String p = c.getString(1);
+
+                            String id = c.getString(0);
+                            Log.d("id","Utilizator cu id: " + id);
+                            String u = c.getString(1);
+                            String p = c.getString(2);
                         }
 
                     }

@@ -45,7 +45,7 @@ public class MyDatabase extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
 
         String query = "CREATE TABLE " + TABLE_NAME + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_USER + " TEXT, " + COLUMN_NUME + " TEXT, " + COLUMN_PRENUME + " TEXT, " +
+                COLUMN_USER + " TEXT UNIQUE, " + COLUMN_NUME + " TEXT, " + COLUMN_PRENUME + " TEXT, " +
                 COLUMN_DATA + " DATE, " + COLUMN_SEX + " TEXT, " + COLUMN_EMAIL +
                 " TEXT, " + COLUMN_PASSWORD + " TEXT " + ");";
 
@@ -110,15 +110,23 @@ public class MyDatabase extends SQLiteOpenHelper{
 
 
     public Cursor getUserData(MyDatabase database){
-       // MyDatabase d = new MyDatabase(this);
+
        SQLiteDatabase sqLiteDatabase = database.getReadableDatabase();
-        String[] coloane = {COLUMN_USER,COLUMN_PASSWORD};
+        String[] coloane = {COLUMN_ID,COLUMN_USER,COLUMN_PASSWORD};
         Cursor c = sqLiteDatabase.query(TABLE_NAME,coloane,null,null,null,null,null);
         return c;
     }
 
-    public String getPasswordData(String pass){
-        return pass;
+
+    public Cursor userValid(MyDatabase database){
+        SQLiteDatabase sqLiteDatabase  = database.getReadableDatabase();
+        String[] col = {COLUMN_USER};
+        Cursor c = sqLiteDatabase.query(TABLE_NAME,col,null,null,null,null,null);
+        return c;
     }
+
+//    public String getPasswordData(String pass){
+//        return pass;
+//    }
 
 }

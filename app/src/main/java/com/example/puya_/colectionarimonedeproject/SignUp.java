@@ -1,6 +1,7 @@
 package com.example.puya_.colectionarimonedeproject;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,9 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+
+
 
 
 
@@ -62,18 +66,50 @@ public class SignUp extends AppCompatActivity {
                 String _password = password.getText().toString();
                 String _retypePaswword = retypePassword.getText().toString();
 
-                if(!_password.equals(_retypePaswword))
-                {
+
+//
+//               if(!stare){
+//
+//
+//               }
+
+                boolean stare = false;
+
+
+                if(!_password.equals(_retypePaswword)) {
                     Toast.makeText(SignUp.this, "Parola nu se potriveste!", Toast.LENGTH_SHORT).show();
                 }
 
-                else if (_user.isEmpty() || _nume.isEmpty() || _prenume.isEmpty() || _data.isEmpty() || _sex.isEmpty()
-                        || _email.isEmpty() || _password.isEmpty()){
 
-                    Toast.makeText(SignUp.this, "Nu ati completate corespunzator", Toast.LENGTH_SHORT).show();
+
+                else  if (_user.isEmpty() || _nume.isEmpty() || _prenume.isEmpty() || _data.isEmpty() || _sex.isEmpty()
+                            || _email.isEmpty() || _password.isEmpty()) {
+
+                        Toast.makeText(SignUp.this, "Nu ati completat corespunzator", Toast.LENGTH_SHORT).show();
+                    }
+                else{
+                    Cursor c=database.userValid(database);
+
+                    c.moveToFirst();
+
+                    do{
+                        if(_user.equals(c.getString(0))){
+                            stare=true;
+                            Toast.makeText(SignUp.this, "User deja existent", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                    while(c.moveToNext());
                 }
 
-                else{
+
+
+
+
+
+
+                if((_password.equals(_retypePaswword)) && !_user.isEmpty() && !_nume.isEmpty() && !_prenume.isEmpty() && !_data.isEmpty() && !_sex.isEmpty()
+                        && !_email.isEmpty() && !_password.isEmpty() && !stare ){
                     Toast.makeText(SignUp.this, "Merge", Toast.LENGTH_SHORT).show();
 
                     User u = new User(user.getText().toString(),nume.getText().toString(),prenume.getText().toString(),
