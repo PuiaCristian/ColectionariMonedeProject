@@ -112,7 +112,8 @@ public class MyDatabase extends SQLiteOpenHelper{
     public Cursor getUserData(MyDatabase database){
 
        SQLiteDatabase sqLiteDatabase = database.getReadableDatabase();
-        String[] coloane = {COLUMN_ID,COLUMN_USER,COLUMN_PASSWORD};
+        //// TODO: 12/2/2016 tot pt id
+        String[] coloane = {COLUMN_USER,COLUMN_PASSWORD};
         Cursor c = sqLiteDatabase.query(TABLE_NAME,coloane,null,null,null,null,null);
         return c;
     }

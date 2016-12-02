@@ -47,13 +47,16 @@ public class Login extends AppCompatActivity {
 
 
                     do{
-                        if(_user.equals(c.getString(1)) && (_pass.equals(c.getString(2)))){
+                        if(_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))){
                             stare = true;
 
-                            String id = c.getString(0);
-                            Log.d("id","Utilizator cu id: " + id);
-                            String u = c.getString(1);
-                            String p = c.getString(2);
+//                            String id = c.getString(0);
+//                            Log.d("id","Utilizator cu id: " + id);
+
+                            //// TODO: 12/2/2016 Putem face sa ia si id-ul
+
+                            String u = c.getString(0);
+                            String p = c.getString(1);
                         }
 
                     }
