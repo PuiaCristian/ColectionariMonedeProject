@@ -2,6 +2,7 @@ package com.example.puya_.colectionarimonedeproject;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -72,6 +73,22 @@ public class SignUp extends AppCompatActivity {
 //
 //
 //               }
+//                SQLiteDatabase sql = new SQLiteDatabase();
+//                Cursor cursor = database.rawQuery("SELECT * FROM " + MyDatabase.TABLE_NAME , null);
+//                boolean rowExists;
+//
+//                if (cursor.moveToFirst())
+//                {
+//                    // DO SOMETHING WITH CURSOR
+//                    rowExists = true;
+//
+//                } else
+//                {
+//                    // I AM EMPTY
+//                    rowExists = false;
+//                }
+
+
 
                 boolean stare = false;
 

@@ -3,6 +3,7 @@ package com.example.puya_.colectionarimonedeproject;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,12 +35,30 @@ public class Login extends AppCompatActivity {
                 String _user = user.getText().toString();
                 String _pass = pass.getText().toString();
 
+
+                MyDatabase database = new MyDatabase(ctx);
+                SQLiteDatabase sqLiteDatabase = database.getWritableDatabase();
+                String count = "SELECT count(*) FROM user";
+                Cursor cursor = sqLiteDatabase.rawQuery(count, null);
+                cursor.moveToFirst();
+                int index = cursor.getInt(0);
+                if(index<=0){
+                    //leave
+                    Toast.makeText(Login.this, "Tabela este goala!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(Login.this, "Tabela populata!!!", Toast.LENGTH_SHORT).show();
+                }
+
+               
+
+
                 if(_user.isEmpty() || _pass.isEmpty()){
                     Toast.makeText(Login.this, "Nu ati completat!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    MyDatabase database = new MyDatabase(ctx);
+                    //MyDatabase database = new MyDatabase(ctx);
                     Cursor c=database.getUserData(database);
                     boolean stare = false;
                     c.moveToFirst();

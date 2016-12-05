@@ -126,8 +126,10 @@ public class MyDatabase extends SQLiteOpenHelper{
         return c;
     }
 
-//    public String getPasswordData(String pass){
-//        return pass;
+//    public Cursor tabelaGoala(MyDatabase database){
+//
 //    }
+
+
 
 }
