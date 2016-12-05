@@ -26,15 +26,28 @@ public class Licitatii extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(getApplicationContext(),AdaugaLicitatie.class);
-                startActivity(it);
+                startActivityForResult(it,300);
             }
         });
-
 
 
         LicitatiiCustomAdapter adp = new LicitatiiCustomAdapter(this,R.layout.layout_licitatie,listaLicitatii);
 
         listViewLicitatii= (ListView)findViewById(R.id.licitatii_Licitatii_listView);
         listViewLicitatii.setAdapter(adp);
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode==300 && resultCode ==RESULT_OK)
+        {
+            LicitatiiCustomAdapter adp = new LicitatiiCustomAdapter(this,R.layout.layout_licitatie,listaLicitatii);
+
+            listViewLicitatii= (ListView)findViewById(R.id.licitatii_Licitatii_listView);
+            listViewLicitatii.setAdapter(adp);
+            adp.notifyDataSetChanged();
+        }
     }
 }
