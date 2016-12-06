@@ -48,7 +48,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Tabela este goala!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(Login.this, "Tabela populata!!!", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(Login.this, "Tabela populata!!!", Toast.LENGTH_SHORT).show();
 
 
                     if (_user.isEmpty() || _pass.isEmpty()) {

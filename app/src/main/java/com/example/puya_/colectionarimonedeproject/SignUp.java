@@ -106,17 +106,29 @@ public class SignUp extends AppCompatActivity {
                     }
                 else{
                     Cursor c=database.userValid(database);
+                    SQLiteDatabase sql = database.getWritableDatabase();
+                    String count = "select count(*) from user";
+                    Cursor cursor = sql.rawQuery(count,null);
+                    cursor.moveToFirst();
+                    int index = cursor.getInt(0);
 
                     c.moveToFirst();
 
-                    do{
-                        if(_user.equals(c.getString(0))){
-                            stare=true;
-                            Toast.makeText(SignUp.this, "User deja existent", Toast.LENGTH_SHORT).show();
-                        }
+                    if(index > 0) {
 
+
+                        do {
+                            if (_user.equals(c.getString(0))) {
+                                stare = true;
+                                Toast.makeText(SignUp.this, "User deja existent", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                        while (c.moveToNext());
                     }
-                    while(c.moveToNext());
+                    else{
+                        Toast.makeText(SignUp.this, "Prima inregistrare", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
 
