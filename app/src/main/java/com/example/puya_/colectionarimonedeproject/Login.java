@@ -59,13 +59,18 @@ public class Login extends AppCompatActivity {
                 else
                 {
                     //MyDatabase database = new MyDatabase(ctx);
+                    //SQLiteDatabase s = database.getWritableDatabase();
                     Cursor c=database.getUserData(database);
+                   // String count2 = "SELECT count(*) FROM user";
+                    //c=s.rawQuery(count2,null);
                     boolean stare = false;
                     c.moveToFirst();
+                    int ind = c.getInt(0);
+
+                    if(ind>0) {
 
 
-
-                    do{
+                        do {
 
                             if (_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))) {
                                 stare = true;
@@ -78,25 +83,27 @@ public class Login extends AppCompatActivity {
                                 String u = c.getString(0);
                                 String p = c.getString(1);
 
-                                Intent i = new Intent(getApplicationContext(),MeniuPrincipal.class);
+                                Intent i = new Intent(getApplicationContext(), MeniuPrincipal.class);
                                 startActivity(i);
                             }
-                        else{
+
+                        }
+                        while (c.moveToNext());
+
+
+                        if (stare) {
+                            Intent i = new Intent(getApplicationContext(), MeniuPrincipal.class);
+                            startActivity(i);
+                        }
+                        else {
 
                             Toast.makeText(Login.this, "User sau parola gresita!", Toast.LENGTH_SHORT).show();
 
                         }
-
                     }
-                    while(c.moveToNext());
-
-                    if(stare){
-                        Intent i = new Intent(getApplicationContext(),MeniuPrincipal.class);
-                        startActivity(i);
+                    else{
+                        Toast.makeText(Login.this, "Nu aveti cont!", Toast.LENGTH_SHORT).show();
                     }
-//                    else{
-//                        Toast.makeText(Login.this, "Nu aveti cont!", Toast.LENGTH_SHORT).show();
-//                    }
                 }
             }
         });

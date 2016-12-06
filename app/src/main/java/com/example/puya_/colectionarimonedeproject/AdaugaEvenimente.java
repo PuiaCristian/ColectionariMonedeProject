@@ -72,66 +72,9 @@ public class AdaugaEvenimente extends AppCompatActivity {
                 Evenimente.lista.add(ev);
 
 
-
-//                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//                try {
-//                    DocumentBuilder builder = factory.newDocumentBuilder() ;
-//                    Document doc = builder.newDocument();
-//
-//                    Element radacina = doc.createElement("evenimente");
-//                    Element adaugare = doc.createElement("adaugareEveniment");
-//                    Element numeElement = doc.createElement("nume");
-//                    Element locatieElement = doc.createElement("locatie");
-//                    Element descriereElement = doc.createElement("descriere");
-//                    Element dataElement = doc.createElement("data");
-//
-//                    Text t1 = doc.createTextNode(_nume);
-//                    Text t2 = doc.createTextNode(_locatie);
-//                    Text t3 = doc.createTextNode(_descriere);
-//                    Text t4 = doc.createTextNode(_data);
-//
-//                    numeElement.appendChild(t1);
-//                    locatieElement.appendChild(t2);
-//                    descriereElement.appendChild(t3);
-//                    dataElement.appendChild(t4);
-//
-//                    adaugare.appendChild(numeElement);
-//                    adaugare.appendChild(locatieElement);
-//                    adaugare.appendChild(descriereElement);
-//                    adaugare.appendChild(dataElement);
-//
-//                    radacina.appendChild(adaugare);
-//                    doc.appendChild(radacina);
-//
-//                    Transformer t = TransformerFactory.newInstance().newTransformer();
-//                    t.transform(new DOMSource(doc),new StreamResult(new FileOutputStream(f)));
-//
-//                    //DOMSource source = new DOMSource(doc);
-//
-//
-//                    //StreamResult result = new StreamResult(new File("C:\\Users\\puya_\\AndroidStudioProjects\\ColectionariMonedeProject\\fisierXml.xml"));
-//
-////                    t.transform(source,result);
-//                   Log.d("fisier","s-a creat fisierul");
-//
-//
-//                    //StreamResult rez = new StreamResult(System.out);
-//
-//
-//                } catch (ParserConfigurationException e) {
-//                    e.printStackTrace();
-//                } catch (TransformerConfigurationException e) {
-//                    e.printStackTrace();
-//                } catch (TransformerException e) {
-//                    e.printStackTrace();
-//                } catch (FileNotFoundException e) {
-//                    e.printStackTrace();
-//                }
-//
-//
-
-                Intent i = new Intent(getApplicationContext(),Evenimente.class);
-                startActivity(i);
+//                Intent i = new Intent(getApplicationContext(),Evenimente.class);
+//                startActivity(i);
+                finish();
 
             }
         });
