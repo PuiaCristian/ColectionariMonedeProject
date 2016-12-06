@@ -12,16 +12,18 @@
     tools:context="com.example.puya_.colectionarimonedeproject.Evenimente">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/adaugaEvenimente_evenimente_button"
-        android:text="@string/adaugaEv_evenimente"/>
+
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listView_Evenimente">
     </ListView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/adaugaEvenimente_evenimente_button"
+        android:text="@string/adaugaEv_evenimente"/>
 
 </LinearLayout>

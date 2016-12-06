@@ -73,6 +73,8 @@ public class EvenimenteCustomAdapter extends ArrayAdapter {
         site.setText(e.getSite());
 
 
+
+
         return customView;
     }
 }

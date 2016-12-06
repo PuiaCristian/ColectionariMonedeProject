@@ -42,68 +42,65 @@ public class Login extends AppCompatActivity {
                 Cursor cursor = sqLiteDatabase.rawQuery(count, null);
                 cursor.moveToFirst();
                 int index = cursor.getInt(0);
+
                 if(index<=0){
                     //leave
                     Toast.makeText(Login.this, "Tabela este goala!", Toast.LENGTH_SHORT).show();
                 }
-                else{
+                else {
                     Toast.makeText(Login.this, "Tabela populata!!!", Toast.LENGTH_SHORT).show();
-                }
-
-               
 
 
-                if(_user.isEmpty() || _pass.isEmpty()){
-                    Toast.makeText(Login.this, "Nu ati completat!", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    //MyDatabase database = new MyDatabase(ctx);
-                    //SQLiteDatabase s = database.getWritableDatabase();
-                    Cursor c=database.getUserData(database);
-                   // String count2 = "SELECT count(*) FROM user";
-                    //c=s.rawQuery(count2,null);
-                    boolean stare = false;
-                    c.moveToFirst();
-                    int ind = c.getInt(0);
-
-                    if(ind>0) {
+                    if (_user.isEmpty() || _pass.isEmpty()) {
+                        Toast.makeText(Login.this, "Nu ati completat!", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        //MyDatabase database = new MyDatabase(ctx);
+                        //SQLiteDatabase s = database.getWritableDatabase();
+                        Cursor c = database.getUserData(database);
+                        // String count2 = "SELECT count(*) FROM user";
+                        //c=s.rawQuery(count2,null);
+                        boolean stare = false;
+                        c.moveToFirst();
+                        //int ind = c.getInt(0);
 
 
-                        do {
 
-                            if (_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))) {
-                                stare = true;
+
+                            do {
+
+                                if (_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))) {
+
+
+                                    stare = true;
 
 //                            String id = c.getString(0);
 //                            Log.d("id","Utilizator cu id: " + id);
 
-                                //// TODO: 12/2/2016 Putem face sa ia si id-ul
+                                    //// TODO: 12/2/2016 Putem face sa ia si id-ul
 
-                                String u = c.getString(0);
-                                String p = c.getString(1);
+                                    String u = c.getString(0);
+                                    String p = c.getString(1);
 
+//                                    Intent i = new Intent(getApplicationContext(), MeniuPrincipal.class);
+//                                    startActivity(i);
+                                }
+
+                            }
+                            while (c.moveToNext());
+
+
+                            if (stare) {
                                 Intent i = new Intent(getApplicationContext(), MeniuPrincipal.class);
                                 startActivity(i);
                             }
+                            else {
 
+                                Toast.makeText(Login.this, "User sau parola gresita!", Toast.LENGTH_SHORT).show();
+
+                            }
                         }
-                        while (c.moveToNext());
 
-
-                        if (stare) {
-                            Intent i = new Intent(getApplicationContext(), MeniuPrincipal.class);
-                            startActivity(i);
-                        }
-                        else {
-
-                            Toast.makeText(Login.this, "User sau parola gresita!", Toast.LENGTH_SHORT).show();
-
-                        }
-                    }
-                    else{
-                        Toast.makeText(Login.this, "Nu aveti cont!", Toast.LENGTH_SHORT).show();
-                    }
                 }
             }
         });

@@ -24,6 +24,20 @@ public class Evenimente extends AppCompatActivity {
         setContentView(R.layout.activity_evenimente);
 
 
+        EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this, R.layout.layout_evenimente, lista);
+        lv = (ListView) findViewById(R.id.listView_Evenimente);
+        lv.setAdapter(e);
+
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getApplicationContext(),WebEvenimente.class);
+                i.putExtra("site",lista.get(position).getSite());
+                startActivity(i);
+            }
+        });
+
 
 
 
@@ -42,19 +56,7 @@ public class Evenimente extends AppCompatActivity {
 
 
 
-            EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this, R.layout.layout_evenimente, lista);
-            lv = (ListView) findViewById(R.id.listView_Evenimente);
-            lv.setAdapter(e);
 
-
-            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent i = new Intent(getApplicationContext(),WebEvenimente.class);
-                    i.putExtra("site",lista.get(position).getSite());
-                    startActivity(i);
-                }
-            });
 
 
 

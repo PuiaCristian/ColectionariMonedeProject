@@ -74,6 +74,8 @@ public class AdaugaEvenimente extends AppCompatActivity {
 
 //                Intent i = new Intent(getApplicationContext(),Evenimente.class);
 //                startActivity(i);
+
+
                 finish();
 
             }
