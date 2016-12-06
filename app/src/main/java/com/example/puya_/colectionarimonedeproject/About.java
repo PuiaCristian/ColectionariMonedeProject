@@ -23,6 +23,8 @@ public class About extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 TextView tv  = (TextView)findViewById(R.id.descriere_about_tv);
+                tv.setText(s);
+
             }
         };
         ai.execute("https://node-rusuvalentin.c9users.io/text.txt");
