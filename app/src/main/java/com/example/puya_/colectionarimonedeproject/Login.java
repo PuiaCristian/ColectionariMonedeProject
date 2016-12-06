@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity {
 
 
                     do{
-                        try {
+
                             if (_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))) {
                                 stare = true;
 
@@ -77,9 +77,12 @@ public class Login extends AppCompatActivity {
 
                                 String u = c.getString(0);
                                 String p = c.getString(1);
+
+                                Intent i = new Intent(getApplicationContext(),MeniuPrincipal.class);
+                                startActivity(i);
                             }
-                        }catch (Exception e)
-                        {
+                        else{
+
                             Toast.makeText(Login.this, "User sau parola gresita!", Toast.LENGTH_SHORT).show();
 
                         }
@@ -91,9 +94,9 @@ public class Login extends AppCompatActivity {
                         Intent i = new Intent(getApplicationContext(),MeniuPrincipal.class);
                         startActivity(i);
                     }
-                    else{
-                        Toast.makeText(Login.this, "Nu aveti cont!", Toast.LENGTH_SHORT).show();
-                    }
+//                    else{
+//                        Toast.makeText(Login.this, "Nu aveti cont!", Toast.LENGTH_SHORT).show();
+//                    }
                 }
             }
         });
