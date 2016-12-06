@@ -78,25 +78,23 @@ public class Login extends AppCompatActivity {
                                 String u = c.getString(0);
                                 String p = c.getString(1);
 
-                                Intent i = new Intent(getApplicationContext(),MeniuPrincipal.class);
-                                startActivity(i);
+//                                Intent i = new Intent(getApplicationContext(),MeniuPrincipal.class);
+//                                startActivity(i);
                             }
+
+
+                    }
+                    while(c.moveToNext());
+
+                    if(stare) {
+                        Intent i = new Intent(getApplicationContext(), MeniuPrincipal.class);
+                        startActivity(i);
+                    }
                         else{
 
                             Toast.makeText(Login.this, "User sau parola gresita!", Toast.LENGTH_SHORT).show();
 
                         }
-
-                    }
-                    while(c.moveToNext());
-
-                    if(stare){
-                        Intent i = new Intent(getApplicationContext(),MeniuPrincipal.class);
-                        startActivity(i);
-                    }
-//                    else{
-//                        Toast.makeText(Login.this, "Nu aveti cont!", Toast.LENGTH_SHORT).show();
-//                    }
                 }
             }
         });
