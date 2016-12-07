@@ -27,7 +27,7 @@ public class About extends AppCompatActivity {
 
             }
         };
-        ai.execute("https://node-rusuvalentin.c9users.io/text.txt");
+        ai.execute("https://node-rusuvalentin.c9users.io/android/text.txt");
     }
 }
 class AducereInformatii extends AsyncTask<String,Void,String>

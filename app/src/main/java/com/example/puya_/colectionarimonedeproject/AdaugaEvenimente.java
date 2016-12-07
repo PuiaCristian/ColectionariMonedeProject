@@ -70,6 +70,7 @@ public class AdaugaEvenimente extends AppCompatActivity {
 
                 EvenimenteJavaClass ev = new EvenimenteJavaClass(_nume,_locatie,_descriere,_data,_site);
                 Evenimente.lista.add(ev);
+                AducereInformatii_JSON.listaEvenimenteJson.add(ev);
 
 
 //                Intent i = new Intent(getApplicationContext(),Evenimente.class);

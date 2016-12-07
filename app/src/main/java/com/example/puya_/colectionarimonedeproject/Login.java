@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.SingleLineTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +42,11 @@ public class Login extends AppCompatActivity {
                 String count = "SELECT count(*) FROM user";
                 Cursor cursor = sqLiteDatabase.rawQuery(count, null);
                 cursor.moveToFirst();
+//                 String select = "select user from user";
+//                SQLiteDatabase db  = database.getReadableDatabase();
+//                Cursor cursorSelect     = db.rawQuery(select, null);
+//                cursorSelect.moveToFirst();
+
                 int index = cursor.getInt(0);
 
                 if(index<=0){
@@ -58,6 +64,15 @@ public class Login extends AppCompatActivity {
                         //MyDatabase database = new MyDatabase(ctx);
                         //SQLiteDatabase s = database.getWritableDatabase();
                         Cursor c = database.getUserData(database);
+                        c.moveToFirst();
+                        SignUp.listaUtilizatori.clear();
+                        int ixx=0;
+                        do{
+                            SignUp.listaUtilizatori.add(c.getString(ixx));
+                            String l = SignUp.listaUtilizatori.get(ixx);
+                            ixx++;
+
+                        }while(c.moveToNext());
                         // String count2 = "SELECT count(*) FROM user";
                         //c=s.rawQuery(count2,null);
                         boolean stare = false;

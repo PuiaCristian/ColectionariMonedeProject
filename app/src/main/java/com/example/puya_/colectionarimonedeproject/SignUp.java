@@ -12,10 +12,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SignUp extends AppCompatActivity {
 
     MyDatabase database = new MyDatabase(this);
-
+    public static List<String> listaUtilizatori= new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

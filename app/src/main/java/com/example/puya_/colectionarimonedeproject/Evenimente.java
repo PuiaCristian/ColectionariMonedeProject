@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -18,25 +19,13 @@ public class Evenimente extends AppCompatActivity {
     public static ListView lv;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evenimente);
 
-
-        EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this, R.layout.layout_evenimente, lista);
-        lv = (ListView) findViewById(R.id.listView_Evenimente);
-        lv.setAdapter(e);
-
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getApplicationContext(),WebEvenimente.class);
-                i.putExtra("site",lista.get(position).getSite());
-                startActivity(i);
-            }
-        });
 
 
 
@@ -55,12 +44,49 @@ public class Evenimente extends AppCompatActivity {
 //// TODO: 11/28/2016 Nu intra in setOnItemClickListener...
 
 
+//
+//            EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this, R.layout.layout_evenimente, lista);
+//            lv = (ListView) findViewById(R.id.listView_Evenimente);
+//
+//            lv.setAdapter(e);
+//
+//
+//
+//            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                    Intent i = new Intent(getApplicationContext(),WebEvenimente.class);
+//                    i.putExtra("site",lista.get(position).getSite());
+//                    startActivity(i);
+//                }
+//            });
 
 
+        AducereInformatii_JSON aJson = new AducereInformatii_JSON(){
+            @Override
+            protected void onPostExecute(List<EvenimenteJavaClass> evenimente) {
+                ListView lv = (ListView)findViewById(R.id.listView_Evenimente);
+                final List<String> listaNumeEvenimente = new ArrayList<String>();
+                for(EvenimenteJavaClass c:evenimente)
+                {
+                    listaNumeEvenimente.add(c.getNume());
 
+                }
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listaNumeEvenimente);
+                lv.setAdapter(adapter);
 
+                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent i = new Intent(getApplicationContext(),WebEvenimente.class);
+                        i.putExtra("site",listaEvenimenteJson.get(position).getSite());
+                        startActivity(i);
+                    }
+                });
 
-
+            }
+        };
+        aJson.execute("https://node-rusuvalentin.c9users.io/android/JSON.txt");
 
 
     }

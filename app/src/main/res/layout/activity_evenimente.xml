@@ -9,21 +9,33 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.puya_.colectionarimonedeproject.Evenimente">
+    tools:context="com.example.puya_.colectionarimonedeproject.Evenimente"
+    android:descendantFocusability="blocksDescendants">
 
 
-
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView_Evenimente">
-    </ListView>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/adaugaEvenimente_evenimente_button"
-        android:text="@string/adaugaEv_evenimente"/>
+        android:text="@string/adaugaEv_evenimente"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView_Evenimente"
+        android:clickable="true"
+        android:cacheColorHint="#00000000"
+        android:divider="#adb8c2"
+        android:dividerHeight="1dp"
+        android:scrollingCache="false"
+        android:smoothScrollbar="true"
+        android:focusable="false">
+    </ListView>
+
+
 
 </LinearLayout>
