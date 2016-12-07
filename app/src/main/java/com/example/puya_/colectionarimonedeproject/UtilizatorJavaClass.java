@@ -12,10 +12,11 @@ public class UtilizatorJavaClass {
     private String password;
     private String data;
     private String email;
+    private String sex;
 
 
 
-    public UtilizatorJavaClass(String id, String nume, String prenume, String user, String password, String data, String email) {
+    public UtilizatorJavaClass(String id, String nume, String prenume, String user, String password, String data, String email, String sex) {
         this.id = id;
         this.nume = nume;
         this.prenume = prenume;
@@ -23,7 +24,16 @@ public class UtilizatorJavaClass {
         this.password = password;
         this.data = data;
         this.email = email;
+        this.sex=sex;
 
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getId() {

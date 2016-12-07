@@ -26,6 +26,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
+
+        //ctx.deleteDatabase(MyDatabase.DATABASE_NAME);
+
+
         Button login = (Button) findViewById(R.id.logIn_logIn_btn);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,24 +51,13 @@ public class Login extends AppCompatActivity {
 
                 Cursor cUtil = database.getUserDataVali(database);
                 cUtil.moveToFirst();
-                int indexV=0;
-                do {
 
-                    String id = cUtil.getString(0);
-                    String nume = cUtil.getString(2);
-                    String prenume = cUtil.getString(3);
-                    String username = cUtil.getString(4);
-                    String data = cUtil.getString(5);
-                    String parola = cUtil.getString(6);
-                    String email = cUtil.getString(7);
 
-                    UtilizatorJavaClass ut = new UtilizatorJavaClass(id,nume,prenume,username,parola,data,email);
-                    utilizatorJavaClassListVali.add(ut);
-                   // String sex = cUtil.getString(8);
 
-                    //COLUMN_ID,COLUMN_NUME,COLUMN_PRENUME,COLUMN_USER,COLUMN_PASSWORD,COLUMN_DATA,COLUMN_EMAIL,COLUMN_SEX
 
-                } while (cUtil.moveToNext());
+
+
+
 
 
 
@@ -75,6 +68,25 @@ public class Login extends AppCompatActivity {
 
                     Toast.makeText(Login.this, "Tabela este goala!", Toast.LENGTH_SHORT).show();
                 } else {
+
+                    do {
+
+                        String id = cUtil.getString(0);
+                        String nume = cUtil.getString(1);
+                        String prenume = cUtil.getString(2);
+                        String username = cUtil.getString(3);
+                        String parola = cUtil.getString(4);
+                        String data = cUtil.getString(5);
+                        String email = cUtil.getString(6);
+                        String sex = cUtil.getString(7);
+
+                        UtilizatorJavaClass ut = new UtilizatorJavaClass(id, nume, prenume, username, parola, data, email,sex);
+                        utilizatorJavaClassListVali.add(ut);
+                        // String sex = cUtil.getString(8);
+
+                        //COLUMN_ID,COLUMN_NUME,COLUMN_PRENUME,COLUMN_USER,COLUMN_PASSWORD,COLUMN_DATA,COLUMN_EMAIL,COLUMN_SEX
+
+                    } while (cUtil.moveToNext());
 
 
                     if (_user.isEmpty() || _pass.isEmpty()) {

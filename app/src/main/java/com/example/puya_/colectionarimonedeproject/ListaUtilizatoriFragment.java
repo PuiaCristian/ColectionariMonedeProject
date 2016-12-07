@@ -30,7 +30,7 @@ public class ListaUtilizatoriFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_lista_utilizatori,container,false);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,SignUp.listaUtilizatori);
-        ListView lv = (ListView) view.findViewById(R.id.utilizatori_Fragmentutilizatori_lv);
+        ListView lv = (ListView) view.findViewById(R.id.listaView_fragmentUtilizatori_lv);
         lv.setAdapter(adapter);
 
 
