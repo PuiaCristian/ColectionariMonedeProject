@@ -19,6 +19,9 @@ import java.util.List;
 public class Login extends AppCompatActivity {
 
     Context ctx = this;
+    public static String _user;
+
+
     public static List<UtilizatorJavaClass> utilizatorJavaClassListVali = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,7 @@ public class Login extends AppCompatActivity {
                 EditText user = (EditText) findViewById(R.id.user_logIn_editView);
                 EditText pass = (EditText) findViewById(R.id.password_logIn_editText);
 
-                String _user = user.getText().toString();
+                 _user = user.getText().toString();
                 String _pass = pass.getText().toString();
 
 
@@ -96,11 +99,11 @@ public class Login extends AppCompatActivity {
                         Cursor c = database.getUserData(database);
                         c.moveToFirst();
                         SignUp.listaUtilizatori.clear();
-                        int ixx = 0;
+                        //int ixx = 0;
                         do {
-                            SignUp.listaUtilizatori.add(c.getString(ixx));
-                            String l = SignUp.listaUtilizatori.get(ixx);
-                            ixx++;
+                            SignUp.listaUtilizatori.add(c.getString(0));
+                            String l = SignUp.listaUtilizatori.get(0);
+                            //ixx++;
 
                         } while (c.moveToNext());
 
@@ -113,6 +116,7 @@ public class Login extends AppCompatActivity {
                             if (_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))) {
 
                                 stare = true;
+
 
                             }
 
