@@ -36,7 +36,6 @@ public class ListaUtilizatoriFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String nume = SignUp.listaUtilizatori.get(position);
 
-                String asd = "asd";
             }
         });
 
