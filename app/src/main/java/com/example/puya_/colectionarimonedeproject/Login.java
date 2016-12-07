@@ -13,17 +13,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Login extends AppCompatActivity {
 
     Context ctx = this;
-
+    public static List<UtilizatorJavaClass> utilizatorJavaClassListVali = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-
-
 
 
         Button login = (Button) findViewById(R.id.logIn_logIn_btn);
@@ -42,79 +42,81 @@ public class Login extends AppCompatActivity {
                 String count = "SELECT count(*) FROM user";
                 Cursor cursor = sqLiteDatabase.rawQuery(count, null);
                 cursor.moveToFirst();
-//                 String select = "select user from user";
-//                SQLiteDatabase db  = database.getReadableDatabase();
-//                Cursor cursorSelect     = db.rawQuery(select, null);
-//                cursorSelect.moveToFirst();
+
+
+
+                Cursor cUtil = database.getUserDataVali(database);
+                cUtil.moveToFirst();
+                int indexV=0;
+                do {
+
+                    String id = cUtil.getString(0);
+                    String nume = cUtil.getString(2);
+                    String prenume = cUtil.getString(3);
+                    String username = cUtil.getString(4);
+                    String data = cUtil.getString(5);
+                    String parola = cUtil.getString(6);
+                    String email = cUtil.getString(7);
+
+                    UtilizatorJavaClass ut = new UtilizatorJavaClass(id,nume,prenume,username,parola,data,email);
+                    utilizatorJavaClassListVali.add(ut);
+                   // String sex = cUtil.getString(8);
+
+                    //COLUMN_ID,COLUMN_NUME,COLUMN_PRENUME,COLUMN_USER,COLUMN_PASSWORD,COLUMN_DATA,COLUMN_EMAIL,COLUMN_SEX
+
+                } while (cUtil.moveToNext());
+
+
+
 
                 int index = cursor.getInt(0);
 
-                if(index<=0){
-                    //leave
+                if (index <= 0) {
+
                     Toast.makeText(Login.this, "Tabela este goala!", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                   // Toast.makeText(Login.this, "Tabela populata!!!", Toast.LENGTH_SHORT).show();
+                } else {
 
 
                     if (_user.isEmpty() || _pass.isEmpty()) {
                         Toast.makeText(Login.this, "Nu ati completat!", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        //MyDatabase database = new MyDatabase(ctx);
-                        //SQLiteDatabase s = database.getWritableDatabase();
+                    } else {
+
                         Cursor c = database.getUserData(database);
                         c.moveToFirst();
                         SignUp.listaUtilizatori.clear();
-                        int ixx=0;
-                        do{
+                        int ixx = 0;
+                        do {
                             SignUp.listaUtilizatori.add(c.getString(ixx));
                             String l = SignUp.listaUtilizatori.get(ixx);
                             ixx++;
 
-                        }while(c.moveToNext());
-                        // String count2 = "SELECT count(*) FROM user";
-                        //c=s.rawQuery(count2,null);
+                        } while (c.moveToNext());
+
                         boolean stare = false;
                         c.moveToFirst();
-                        //int ind = c.getInt(0);
 
 
+                        do {
 
+                            if (_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))) {
 
-                            do {
-
-                                if (_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))) {
-
-
-                                    stare = true;
-
-//                            String id = c.getString(0);
-//                            Log.d("id","Utilizator cu id: " + id);
-
-                                    //// TODO: 12/2/2016 Putem face sa ia si id-ul
-
-                                    String u = c.getString(0);
-                                    String p = c.getString(1);
-
-//                                    Intent i = new Intent(getApplicationContext(), MeniuPrincipal.class);
-//                                    startActivity(i);
-                                }
+                                stare = true;
 
                             }
-                            while (c.moveToNext());
 
-
-                            if (stare) {
-                                Intent i = new Intent(getApplicationContext(), MeniuPrincipal.class);
-                                startActivity(i);
-                            }
-                            else {
-
-                                Toast.makeText(Login.this, "User sau parola gresita!", Toast.LENGTH_SHORT).show();
-
-                            }
                         }
+                        while (c.moveToNext());
+
+
+                        if (stare) {
+                            Intent i = new Intent(getApplicationContext(), MeniuPrincipal.class);
+                            startActivity(i);
+                        } else {
+
+                            Toast.makeText(Login.this, "User sau parola gresita!", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
 
                 }
             }
@@ -124,7 +126,7 @@ public class Login extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(getApplicationContext(),SignUp.class);
+                Intent i = new Intent(getApplicationContext(), SignUp.class);
                 startActivity(i);
             }
         });

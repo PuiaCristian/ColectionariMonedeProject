@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_red_dark"
     android:layout_gravity="top|center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginLeft="150dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,4 +13,24 @@
         android:text="Detalii Utilizatori"
         android:textColor="@android:color/white"
         android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NUME: "
+            android:textColor="@android:color/white"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:id="@+id/nume_fragmentDetaliiUtilizatori_tv"/>
+    </LinearLayout>
+
 </LinearLayout>

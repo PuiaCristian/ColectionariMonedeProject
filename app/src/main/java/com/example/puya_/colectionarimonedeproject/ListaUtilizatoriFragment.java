@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -20,9 +21,11 @@ import java.util.List;
 
 public class ListaUtilizatoriFragment extends Fragment {
 
+    public static UtilizatorJavaClass utilizatorJavaClassCautat;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
 
         View view = inflater.inflate(R.layout.fragment_lista_utilizatori,container,false);
 
@@ -34,7 +37,10 @@ public class ListaUtilizatoriFragment extends Fragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String nume = SignUp.listaUtilizatori.get(position);
+                utilizatorJavaClassCautat = Login.utilizatorJavaClassListVali.get(position);
+
+
+                String a = utilizatorJavaClassCautat.getNume();
 
             }
         });
