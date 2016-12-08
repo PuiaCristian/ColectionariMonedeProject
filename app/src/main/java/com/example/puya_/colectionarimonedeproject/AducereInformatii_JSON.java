@@ -47,17 +47,18 @@ public class AducereInformatii_JSON extends AsyncTask<String,Void,List<Eveniment
 
             JSONArray lista = obj.getJSONArray("eveniment");
 
-            for(int i = 0;i<lista.length();i++)
-            {
-                JSONObject element = lista.getJSONObject(i);
-                EvenimenteJavaClass evenimente = new EvenimenteJavaClass(element.getString("nume"),
-                        element.getString("locatie"),
-                        element.getString("descriere"),
-                        element.getString("data"),
-                        element.getString("site"));
+            if(listaEvenimenteJson.isEmpty()) {
+                for (int i = 0; i < lista.length(); i++) {
+                    JSONObject element = lista.getJSONObject(i);
+                    EvenimenteJavaClass evenimente = new EvenimenteJavaClass(element.getString("nume"),
+                            element.getString("locatie"),
+                            element.getString("descriere"),
+                            element.getString("data"),
+                            element.getString("site"));
 
-                listaEvenimenteJson.add(evenimente);
+                    listaEvenimenteJson.add(evenimente);
 
+                }
             }
 
         } catch (MalformedURLException e) {
