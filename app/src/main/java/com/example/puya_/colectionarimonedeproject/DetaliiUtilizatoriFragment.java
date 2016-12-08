@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-/**
- * Created by rusuvalentin on 25/11/2016.
- */
+
 
 public class DetaliiUtilizatoriFragment extends Fragment {
 

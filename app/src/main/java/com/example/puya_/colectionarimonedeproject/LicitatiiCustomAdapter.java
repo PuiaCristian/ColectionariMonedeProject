@@ -10,9 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by rusuvalentin on 24/11/2016.
- */
+
 
 public class LicitatiiCustomAdapter extends ArrayAdapter<LicitatiiJavaClass> {
 

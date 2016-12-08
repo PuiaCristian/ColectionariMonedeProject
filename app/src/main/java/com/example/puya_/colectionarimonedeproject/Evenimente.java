@@ -41,25 +41,7 @@ public class Evenimente extends AppCompatActivity {
 
 
 
-//// TODO: 11/28/2016 Nu intra in setOnItemClickListener...
 
-
-//
-//            EvenimenteCustomAdapter e = new EvenimenteCustomAdapter(this, R.layout.layout_evenimente, lista);
-//            lv = (ListView) findViewById(R.id.listView_Evenimente);
-//
-//            lv.setAdapter(e);
-//
-//
-//
-//            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                @Override
-//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                    Intent i = new Intent(getApplicationContext(),WebEvenimente.class);
-//                    i.putExtra("site",lista.get(position).getSite());
-//                    startActivity(i);
-//                }
-//            });
 
 
         AducereInformatii_JSON aJson = new AducereInformatii_JSON(){

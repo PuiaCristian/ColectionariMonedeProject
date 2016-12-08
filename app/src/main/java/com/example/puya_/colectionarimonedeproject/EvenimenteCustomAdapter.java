@@ -12,9 +12,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by puya_ on 11/24/2016.
- */
 
 public class EvenimenteCustomAdapter extends ArrayAdapter {
 
@@ -42,30 +39,6 @@ public class EvenimenteCustomAdapter extends ArrayAdapter {
         EvenimenteJavaClass e = evenimente.get(position);
 
 
-
-//            nume.setText(ed.getNume().toString());
-//            locatie.setText(ed.getNume().toString());
-//            descriere.setText(ed.getNume().toString());
-//            data.setText(ed.getNume().toString());
-
-//
-
-//        EvenimenteJavaClass c = new EvenimenteJavaClass(a._nume,a._locatie,a._descriere,a._data);
-
-
-
-//        nume.setText(Evenimente.lista.);
-//        locatie.setText(a._descriere);
-//        descriere.setText(a._locatie);
-//        data.setText(a._data);
-
-//        for (EvenimenteJavaClass v : Evenimente.lista ) {
-//            nume.setText(v.getNume());
-//            nume.setText(v.getLocatie());
-//            nume.setText(v.getDescriere());
-//            nume.setText(v.getData());
-//
-//        }
         nume.setText(e.getNume());
         locatie.setText(e.getLocatie());
         descriere.setText(e.getDescriere());

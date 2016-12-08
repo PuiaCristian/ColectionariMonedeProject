@@ -1,8 +1,6 @@
 package com.example.puya_.colectionarimonedeproject;
 
-/**
- * Created by rusuvalentin on 07/12/2016.
- */
+
 
 public class UtilizatorJavaClass {
     private String id;

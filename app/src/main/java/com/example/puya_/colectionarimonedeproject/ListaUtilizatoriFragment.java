@@ -15,9 +15,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by rusuvalentin on 25/11/2016.
- */
+
 
 public class ListaUtilizatoriFragment extends Fragment {
 

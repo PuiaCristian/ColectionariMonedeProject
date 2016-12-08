@@ -1,9 +1,5 @@
 package com.example.puya_.colectionarimonedeproject;
 
-/**
- * Created by rusuvalentin on 24/11/2016.
- */
-
 public class LicitatiiJavaClass {
 
     private String nume;

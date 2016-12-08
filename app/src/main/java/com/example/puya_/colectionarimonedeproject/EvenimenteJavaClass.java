@@ -1,8 +1,6 @@
 package com.example.puya_.colectionarimonedeproject;
 
-/**
- * Created by puya_ on 11/24/2016.
- */
+
 
 public class EvenimenteJavaClass {
 

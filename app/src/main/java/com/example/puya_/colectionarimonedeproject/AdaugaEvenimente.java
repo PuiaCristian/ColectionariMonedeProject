@@ -73,8 +73,7 @@ public class AdaugaEvenimente extends AppCompatActivity {
                 AducereInformatii_JSON.listaEvenimenteJson.add(ev);
 
 
-//                Intent i = new Intent(getApplicationContext(),Evenimente.class);
-//                startActivity(i);
+
 
 
                 finish();

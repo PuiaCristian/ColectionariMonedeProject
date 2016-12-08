@@ -13,9 +13,6 @@ import android.widget.EditText;
 import static android.R.attr.data;
 import static android.R.attr.id;
 
-/**
- * Created by rusuvalentin on 24/11/2016.
- */
 
 public class MyDatabase extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;

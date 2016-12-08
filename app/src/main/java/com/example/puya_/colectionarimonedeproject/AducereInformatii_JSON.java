@@ -16,9 +16,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by rusuvalentin on 06/12/2016.
- */
+
 
 public class AducereInformatii_JSON extends AsyncTask<String,Void,List<EvenimenteJavaClass>>{
 
