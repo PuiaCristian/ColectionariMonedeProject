@@ -53,7 +53,7 @@ public class MeniuPrincipal extends AppCompatActivity {
         utilizatori.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(getApplicationContext(),Utilizatori.class);
+                Intent it = new Intent(getApplicationContext(),ListaDetalii.class);
                 startActivity(it);
             }
         });

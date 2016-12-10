@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity {
     public static String _user;
 
 
-    public static List<UtilizatorJavaClass> utilizatorJavaClassListVali = new ArrayList<>();
+    public static List<UtilizatorJavaClass> utilizatorJavaClassListVali = new ArrayList<UtilizatorJavaClass>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -48,4 +48,7 @@
     <string name="welcome_splash">WELCOME</string>
     <string name="site_adaugaEv">Site:</string>
     <string name="site_evenimente">Site:</string>
+    <string name="nume_fragDetalii_tv">Nume:</string>
+    <string name="prenume_fragDetalii_tv">Prenume:</string>
+    <string name="email_fragDetalii_tv">E-Mail:</string>
 </resources>
