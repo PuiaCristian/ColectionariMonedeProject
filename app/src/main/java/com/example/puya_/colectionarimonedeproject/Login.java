@@ -23,14 +23,14 @@ public class Login extends AppCompatActivity {
 
 
     public static List<UtilizatorJavaClass> utilizatorJavaClassListVali = new ArrayList<UtilizatorJavaClass>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
 
-
-       // ctx.deleteDatabase(MyDatabase.DATABASE_NAME);
+        //ctx.deleteDatabase(MyDatabase.DATABASE_NAME);
 
 
         Button login = (Button) findViewById(R.id.logIn_logIn_btn);
@@ -40,7 +40,7 @@ public class Login extends AppCompatActivity {
                 EditText user = (EditText) findViewById(R.id.user_logIn_editView);
                 EditText pass = (EditText) findViewById(R.id.password_logIn_editText);
 
-                 _user = user.getText().toString();
+                _user = user.getText().toString();
                 String _pass = pass.getText().toString();
 
 
@@ -51,18 +51,8 @@ public class Login extends AppCompatActivity {
                 cursor.moveToFirst();
 
 
-
                 Cursor cUtil = database.getUserDataVali(database);
                 cUtil.moveToFirst();
-
-
-
-
-
-
-
-
-
 
 
                 int index = cursor.getInt(0);
@@ -83,11 +73,9 @@ public class Login extends AppCompatActivity {
                         String email = cUtil.getString(6);
                         String sex = cUtil.getString(7);
 
-                        UtilizatorJavaClass ut = new UtilizatorJavaClass(id, nume, prenume, username, parola, data, email,sex);
+                        UtilizatorJavaClass ut = new UtilizatorJavaClass(id, nume, prenume, username, parola, data, email, sex);
                         utilizatorJavaClassListVali.add(ut);
-                        // String sex = cUtil.getString(8);
 
-                        //COLUMN_ID,COLUMN_NUME,COLUMN_PRENUME,COLUMN_USER,COLUMN_PASSWORD,COLUMN_DATA,COLUMN_EMAIL,COLUMN_SEX
 
                     } while (cUtil.moveToNext());
 
@@ -99,11 +87,11 @@ public class Login extends AppCompatActivity {
                         Cursor c = database.getUserData(database);
                         c.moveToFirst();
                         SignUp.listaUtilizatori.clear();
-                        //int ixx = 0;
+
                         do {
                             SignUp.listaUtilizatori.add(c.getString(0));
                             String l = SignUp.listaUtilizatori.get(0);
-                            //ixx++;
+
 
                         } while (c.moveToNext());
 
