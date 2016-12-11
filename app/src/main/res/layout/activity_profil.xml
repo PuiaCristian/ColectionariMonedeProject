@@ -68,34 +68,7 @@
                     android:id="@+id/prenume_profil_tv"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Monede:"/>
 
-                <ListView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/monede_profil_listView">
-
-                </ListView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/adaugaMoneda_profil_button"
-                    android:id="@+id/adaugaMoneda_profil_button"/>
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
