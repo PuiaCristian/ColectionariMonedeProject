@@ -31,6 +31,7 @@ public class Evenimente extends AppCompatActivity {
 
 
 
+
         Button adaugaEvenimente = (Button)findViewById(R.id.adaugaEvenimente_evenimente_button);
         adaugaEvenimente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,5 +73,11 @@ public class Evenimente extends AppCompatActivity {
         aJson.execute("https://node-rusuvalentin.c9users.io/android/JSON.txt");
 
 
+
+
     }
+
+
 }
+
+

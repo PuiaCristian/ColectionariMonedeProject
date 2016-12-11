@@ -1,6 +1,7 @@
 package com.example.puya_.colectionarimonedeproject;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +17,7 @@ public class AdaugaEvenimente extends AppCompatActivity {
     public  String _descriere;
     public  String _data;
     public  String _site;
+
 
 
     @Override
@@ -49,9 +51,12 @@ public class AdaugaEvenimente extends AppCompatActivity {
 
 
 
-
-
+                Intent it = new Intent(getApplicationContext(),Evenimente.class);
                 finish();
+                startActivity(it);
+
+
+                //finish();
 
             }
         });

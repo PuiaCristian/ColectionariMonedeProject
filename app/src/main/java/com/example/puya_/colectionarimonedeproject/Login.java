@@ -30,7 +30,7 @@ public class Login extends AppCompatActivity {
 
 
 
-        //ctx.deleteDatabase(MyDatabase.DATABASE_NAME);
+       // ctx.deleteDatabase(MyDatabase.DATABASE_NAME);
 
 
         Button login = (Button) findViewById(R.id.logIn_logIn_btn);
@@ -69,7 +69,7 @@ public class Login extends AppCompatActivity {
 
                 if (index <= 0) {
 
-                    Toast.makeText(Login.this, "Tabela este goala!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Este necesara crearea unui cont!", Toast.LENGTH_SHORT).show();
                 } else {
 
                     do {
