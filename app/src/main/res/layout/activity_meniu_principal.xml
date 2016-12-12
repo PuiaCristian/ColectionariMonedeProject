@@ -18,7 +18,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
 
             <LinearLayout
@@ -29,7 +30,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/evenimente_meniuPrincipal_button"
-                    android:id="@+id/evenimente_meniuPinrcipal_button"/>
+                    android:id="@+id/evenimente_meniuPinrcipal_button" />
 
 
             </LinearLayout>
