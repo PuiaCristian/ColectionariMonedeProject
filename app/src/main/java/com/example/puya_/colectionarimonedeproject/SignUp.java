@@ -18,19 +18,15 @@ import java.util.List;
 public class SignUp extends AppCompatActivity {
 
     MyDatabase database = new MyDatabase(this);
-    public static List<String> listaUtilizatori= new ArrayList<>();
+    public static List<String> listaUtilizatori = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
 
-
-
-
-
-
-        Button add = (Button)  findViewById(R.id.add_signUp_btn);
+        Button add = (Button) findViewById(R.id.add_signUp_btn);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,19 +47,9 @@ public class SignUp extends AppCompatActivity {
                 String _data = data.getText().toString();
 
 
-//                if(sex.getCheckedRadioButtonId()!=-1){
-//                    int idRadio= sex.getCheckedRadioButtonId();
-//                    View radioButton = sex.findViewById(idRadio);
-//                    int radioId = sex.indexOfChild(radioButton);
-//                    RadioButton radioBtn = (RadioButton) sex.getChildAt(radioId);
-//                    String _sex =  radioBtn.getText().toString();
-//                }
-
-
                 int a = sex.getCheckedRadioButtonId();
-                RadioButton rb  = (RadioButton) sex.findViewById(a);
+                RadioButton rb = (RadioButton) sex.findViewById(a);
                 String _sex = rb.getText().toString();
-
 
 
                 String _email = email.getText().toString();
@@ -71,53 +57,26 @@ public class SignUp extends AppCompatActivity {
                 String _retypePaswword = retypePassword.getText().toString();
 
 
-//
-//               if(!stare){
-//
-//
-//               }
-//                SQLiteDatabase sql = new SQLiteDatabase();
-//                Cursor cursor = database.rawQuery("SELECT * FROM " + MyDatabase.TABLE_NAME , null);
-//                boolean rowExists;
-//
-//                if (cursor.moveToFirst())
-//                {
-//                    // DO SOMETHING WITH CURSOR
-//                    rowExists = true;
-//
-//                } else
-//                {
-//                    // I AM EMPTY
-//                    rowExists = false;
-//                }
-
-
-
                 boolean stare = false;
 
 
-                if(!_password.equals(_retypePaswword)) {
+                if (!_password.equals(_retypePaswword)) {
                     Toast.makeText(SignUp.this, "Parola nu se potriveste!", Toast.LENGTH_SHORT).show();
-                }
+                } else if (_user.isEmpty() || _nume.isEmpty() || _prenume.isEmpty() || _data.isEmpty() || _sex.isEmpty()
+                        || _email.isEmpty() || _password.isEmpty()) {
 
-
-
-                else  if (_user.isEmpty() || _nume.isEmpty() || _prenume.isEmpty() || _data.isEmpty() || _sex.isEmpty()
-                            || _email.isEmpty() || _password.isEmpty()) {
-
-                        Toast.makeText(SignUp.this, "Nu ati completat corespunzator", Toast.LENGTH_SHORT).show();
-                    }
-                else{
-                    Cursor c=database.userValid(database);
+                    Toast.makeText(SignUp.this, "Nu ati completat corespunzator", Toast.LENGTH_SHORT).show();
+                } else {
+                    Cursor c = database.userValid(database);
                     SQLiteDatabase sql = database.getWritableDatabase();
                     String count = "select count(*) from user";
-                    Cursor cursor = sql.rawQuery(count,null);
+                    Cursor cursor = sql.rawQuery(count, null);
                     cursor.moveToFirst();
                     int index = cursor.getInt(0);
 
                     c.moveToFirst();
 
-                    if(index > 0) {
+                    if (index > 0) {
 
 
                         do {
@@ -128,40 +87,27 @@ public class SignUp extends AppCompatActivity {
 
                         }
                         while (c.moveToNext());
-                    }
-                    else{
+                    } else {
                         Toast.makeText(SignUp.this, "Prima inregistrare", Toast.LENGTH_SHORT).show();
                     }
                 }
 
 
+                if ((_password.equals(_retypePaswword)) && !_user.isEmpty() && !_nume.isEmpty() && !_prenume.isEmpty() && !_data.isEmpty() && !_sex.isEmpty()
+                        && !_email.isEmpty() && !_password.isEmpty() && !stare) {
 
 
+                    User u = new User(user.getText().toString(), nume.getText().toString(), prenume.getText().toString(),
+                            data.getText().toString(), _sex, email.getText().toString(), password.getText().toString());
 
-
-
-                if((_password.equals(_retypePaswword)) && !_user.isEmpty() && !_nume.isEmpty() && !_prenume.isEmpty() && !_data.isEmpty() && !_sex.isEmpty()
-                        && !_email.isEmpty() && !_password.isEmpty() && !stare ){
-                    Toast.makeText(SignUp.this, "Merge", Toast.LENGTH_SHORT).show();
-
-                    User u = new User(user.getText().toString(),nume.getText().toString(),prenume.getText().toString(),
-                            data.getText().toString(),_sex,email.getText().toString(),password.getText().toString());
-//                    u.setUser(_user);
-//                    u.setNume(_nume);
-//                    u.setPrenume(_prenume);
-//                    u.setData(_data);
-//                    u.setSex(_sex);
-//                    u.setEmail(_email);
-//                    u.setParola(_password);
 
                     database.AdaugaElemente(u);
-                    Intent i = new Intent(getApplicationContext(),Login.class);
+                    Intent i = new Intent(getApplicationContext(), Login.class);
                     startActivity(i);
 
                 }
             }
         });
-
 
 
     }
