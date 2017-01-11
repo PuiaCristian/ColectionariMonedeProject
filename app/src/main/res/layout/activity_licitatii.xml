@@ -12,6 +12,11 @@
     tools:context="com.example.puya_.colectionarimonedeproject.Licitatii">
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chartButton_licitatii"
+        android:text="@string/chartButtonLicitatiiText"/>
 
     <Button
         android:layout_width="wrap_content"

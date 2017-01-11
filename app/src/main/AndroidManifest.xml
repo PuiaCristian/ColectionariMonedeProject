@@ -15,16 +15,14 @@
         <activity android:name=".AdaugaEvenimente" />
         <activity android:name=".Profil" />
         <activity android:name=".About" />
-        <activity android:name=".Login">
-
-        </activity>
+        <activity android:name=".Login"></activity>
         <activity android:name=".Evenimente" />
         <activity android:name=".Licitatii" />
         <activity
             android:name=".Utilizatori"
             android:screenOrientation="landscape" />
         <activity android:name=".AdaugaLicitatie" />
-        <activity android:name=".SplashScreen" >
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +33,8 @@
         <activity android:name=".FragmentSimplu" />
         <activity android:name=".FragmentDetalii" />
         <activity android:name=".ListaSimpla" />
-        <activity android:name=".ListaDetalii"></activity>
+        <activity android:name=".ListaDetalii" />
+        <activity android:name=".ColumnChartActivity"></activity>
     </application>
 
 </manifest>

@@ -21,6 +21,15 @@ public class Licitatii extends AppCompatActivity {
         setContentView(R.layout.activity_licitatii);
 
 
+        Button createChart = (Button)findViewById(R.id.chartButton_licitatii);
+        createChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(getApplicationContext(),ColumnChartActivity.class);
+                startActivity(it);
+            }
+        });
+
         Button adaugaLicitatie = (Button)findViewById(R.id.adaugaLicitatie_licitatii_button);
         adaugaLicitatie.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -51,4 +51,5 @@
     <string name="nume_fragDetalii_tv">Nume:</string>
     <string name="prenume_fragDetalii_tv">Prenume:</string>
     <string name="email_fragDetalii_tv">E-Mail:</string>
+    <string name="chartButtonLicitatiiText">Histograma Preturi</string>
 </resources>
