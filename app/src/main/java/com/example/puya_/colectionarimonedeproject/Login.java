@@ -2,6 +2,7 @@ package com.example.puya_.colectionarimonedeproject;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,13 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //sharedPreferences
+        SharedPreferences sp = getPreferences(Context.MODE_PRIVATE);
+        String userSP = sp.getString("username","");
+        String parolaSP = sp.getString("password","");
 
+        ((EditText)findViewById(R.id.user_logIn_editView)).setText(userSP);
+        ((EditText)findViewById(R.id.password_logIn_editText)).setText(parolaSP);
 
        // ctx.deleteDatabase(MyDatabase.DATABASE_NAME);
 
@@ -54,15 +61,6 @@ public class Login extends AppCompatActivity {
 
                 Cursor cUtil = database.getUserDataVali(database);
                 cUtil.moveToFirst();
-
-
-
-
-
-
-
-
-
 
 
                 int index = cursor.getInt(0);
@@ -97,6 +95,13 @@ public class Login extends AppCompatActivity {
                             if (_user.equals(c.getString(0)) && (_pass.equals(c.getString(1)))) {
 
                                 stare = true;
+
+                                SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                editor.putString("username",_user);
+                                editor.putString("password",_pass);
+                                editor.commit();
 
 
                             }
