@@ -28,8 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/pret_licitatie_tv"
-                android:text="Pret Pornire:"
-                android:inputType="number"/>
+                android:text="Pret Pornire:" />
 
 
         </LinearLayout>

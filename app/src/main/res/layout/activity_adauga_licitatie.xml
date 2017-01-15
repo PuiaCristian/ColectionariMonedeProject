@@ -56,7 +56,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pret_adaugaLicitatie_et"
-            android:hint="Pret Pornire"/>
+            android:hint="Pret Pornire"
+            android:inputType="number"/>
 
 
 

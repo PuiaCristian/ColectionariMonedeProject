@@ -27,6 +27,7 @@ public class About extends AppCompatActivity {
 
             }
         };
+        //In cazul in care servarul nu este pornit,va rugam sa imi trimiteti mail la adresa rusuvalentin95@yahoo.com pentru a porni servarul
         ai.execute("https://node-rusuvalentin.c9users.io/android/text.txt");
     }
 }
